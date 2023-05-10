@@ -1,0 +1,69 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.toast-notification-card {
+  padding: 5px;
+  position: fixed !important;
+  top: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.toast-notification-card .btn-close {
+  display: flex;
+  justify-content: end;
+  cursor: pointer;
+}
+
+.toast-notification-card .alert-type-success {
+  background-color: #bbe6c3;
+}
+
+.toast-notification-card .alert-type-danger {
+  background-color: #f37895;
+}
+
+.toast-notification-card .alert-type-warning {
+  background-color: #fb9e6f;
+}
+
+.toast-notifier-card-body {
+  padding-top: 0px !important;
+}

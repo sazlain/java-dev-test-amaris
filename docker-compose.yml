@@ -1,0 +1,37 @@
+version: '3.8'
+services:
+  web-server:
+    depends_on:
+      - api-server
+    image: nginx:1.15.12-alpine
+    container_name: web-server
+    stdin_open: true
+    tty: true
+    ports:
+      - "80:80"
+    volumes:
+      - ./src/webapp/build:/var/www/html
+      - ./nginx-conf:/etc/nginx/conf.d
+    networks:
+      - app-network
+    environment:
+      - TZ=America/Bogota
+
+  api-server:
+    image: amazoncorretto:11
+    container_name: api-server
+    command: sh -c "java -jar /api/azlain-0.0.1-SNAPSHOT.war"
+    stdin_open: true
+    tty: true
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./target:/api
+    environment:
+      - TZ=America/Bogota
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

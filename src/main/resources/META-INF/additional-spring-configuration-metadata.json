@@ -1,0 +1,12 @@
+{"properties": [
+  {
+    "name": "api.service.employees.url",
+    "type": "java.lang.String",
+    "description": "External url service to get employee list"
+  },
+  {
+    "name": "api.service.employee.url",
+    "type": "java.lang.String",
+    "description": "External url service to get employee by id"
+  }
+]}
